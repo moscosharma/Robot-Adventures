@@ -1,0 +1,33 @@
+# Bytecode & Cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+myvenv/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Builds
+dist/
+build/
+
+# Pygame or game assets (optional if you don’t want to track large assets)
+*.ogg
+*.mp3
+*.wav
+*.zip
+*.psd
+*.blend
+
+# Logs
+*.log
+
+*assets
