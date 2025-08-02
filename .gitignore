@@ -21,8 +21,6 @@ build/
 
 # Pygame or game assets (optional if you don’t want to track large assets)
 *.ogg
-*.mp3
-*.wav
 *.zip
 *.psd
 *.blend
@@ -30,4 +28,3 @@ build/
 # Logs
 *.log
 
-*assets
