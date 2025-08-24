@@ -1,6 +1,6 @@
 from game.characters.core.character import Character, CharacterAnimationStates, Direction
 from game.characters.player.player import PlayerStates
-from game.core import Tags, Layers, GameObject, GameWorld, Explosion
+from game.core import Tags, Layers, GameWorld, Explosion
 import pygame
 
 class EnemyAction:
@@ -35,7 +35,7 @@ class Enemy(Character):
         self.enemyKilled = enemyKilled
         self.playerKilled = playerKilled
 
-    def getPatrolPoints(self, x: int):
+    def getPatrolPoints(self, x):
         left = x - Enemy.PatrolRange / 2
         right = x + Enemy.PatrolRange / 2
         if x > Enemy.Bounds[1]:
@@ -44,7 +44,7 @@ class Enemy(Character):
             return (Enemy.Bounds[0], Enemy.Bounds[0] + self.PatrolRange)
         return (left, right)
 
-    def onCollision(self, gameObject: GameObject):
+    def onCollision(self, gameObject):
         if gameObject.tag == Tags.TileMap:
             self.velocity.y = 0
 
@@ -55,7 +55,7 @@ class Enemy(Character):
             else:
                 self.playerKilled()
 
-    def idleActionDecision(self, delayForNextAction: float):
+    def idleActionDecision(self, delayForNextAction):
         self.action = EnemyAction.Patrol
         self.nextActionTime += delayForNextAction
         self.patrolPoints = self.getPatrolPoints(self.position.x)
